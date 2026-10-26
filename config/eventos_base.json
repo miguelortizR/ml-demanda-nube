@@ -1,0 +1,172 @@
+{
+  "version": 2,
+  "_ayuda": "Eventos ESTÁNDAR (nacionales/de calendario) que aplican a cualquier año. Se expanden a fechas reales con domain/reglas_eventos.py. Tipos de regla: fecha_fija (mes, dia), rango_fijo (mes_ini, dia_ini, mes_fin, dia_fin), pascua (offset_ini, offset_fin respecto al Domingo de Resurrección), n_esimo_dia_semana (mes, dia_semana [0=lunes..6=domingo], n), ultimo_dia_semana (mes, dia_semana) y fechas_puntuales (fecha_ini, fecha_fin). Todos aceptan 'ventana_antes'/'ventana_despues' y 'anios'. 'impacto' (0-1) es la importancia relativa del evento y 'perfil_impacto' su evolucion: constante, decreciente o creciente. Los eventos NO estandar (Feria de Cali, recesos escolares, Black Friday, elecciones) viven en config/eventos_personalizados.json.",
+  "categorias_validas": [
+    "feria",
+    "festivo_local",
+    "evento_masivo",
+    "obra",
+    "paro",
+    "clima",
+    "desastre",
+    "otro"
+  ],
+  "perfiles_validos": ["constante", "decreciente", "creciente"],
+  "eventos": [
+    {
+      "id": "enero_01",
+      "nombre": "Año Nuevo (1 de enero)",
+      "categoria": "festivo_local",
+      "impacto": 0.9,
+      "fuente": "Festivo nacional de fecha fija.",
+      "regla": { "tipo": "fecha_fija", "mes": 1, "dia": 1 }
+    },
+    {
+      "id": "dic_24",
+      "nombre": "Nochebuena (24 de diciembre)",
+      "categoria": "festivo_local",
+      "impacto": 0.9,
+      "fuente": "Víspera de Navidad; caída fuerte de la demanda.",
+      "regla": { "tipo": "fecha_fija", "mes": 12, "dia": 24 }
+    },
+    {
+      "id": "dic_25",
+      "nombre": "Navidad (25 de diciembre)",
+      "categoria": "festivo_local",
+      "impacto": 0.9,
+      "fuente": "Festivo nacional de fecha fija.",
+      "regla": { "tipo": "fecha_fija", "mes": 12, "dia": 25 }
+    },
+    {
+      "id": "dic_31",
+      "nombre": "Fin de año (31 de diciembre)",
+      "categoria": "festivo_local",
+      "impacto": 0.95,
+      "fuente": "Último día del año; demanda mínima del sistema.",
+      "regla": { "tipo": "fecha_fija", "mes": 12, "dia": 31 }
+    },
+    {
+      "id": "temporada_dic",
+      "nombre": "Temporada de diciembre",
+      "categoria": "otro",
+      "impacto": 0.6,
+      "fuente": "Temporada navideña y de vacaciones (15 al 31 de diciembre).",
+      "regla": { "tipo": "rango_fijo", "mes_ini": 12, "dia_ini": 15, "mes_fin": 12, "dia_fin": 31 }
+    },
+    {
+      "id": "prev_semana_santa",
+      "nombre": "Semana previa a Semana Santa",
+      "categoria": "otro",
+      "impacto": 0.4,
+      "fuente": "Seis días previos al Domingo de Ramos (cálculo litúrgico).",
+      "regla": { "tipo": "pascua", "offset_ini": -13, "offset_fin": -8 }
+    },
+    {
+      "id": "semana_santa",
+      "nombre": "Semana Santa",
+      "categoria": "festivo_local",
+      "impacto": 0.75,
+      "fuente": "Del Domingo de Ramos al Domingo de Resurrección (cálculo litúrgico).",
+      "regla": { "tipo": "pascua", "offset_ini": -7, "offset_fin": 0 }
+    },
+    {
+      "id": "semana_santa_laboral",
+      "nombre": "Semana Santa laboral (Lunes a Viernes Santo)",
+      "categoria": "festivo_local",
+      "impacto": 0.75,
+      "fuente": "Días hábiles de la Semana Santa (cálculo litúrgico).",
+      "regla": { "tipo": "pascua", "offset_ini": -6, "offset_fin": -2 }
+    },
+    {
+      "id": "jueves_santo",
+      "nombre": "Jueves Santo",
+      "categoria": "festivo_local",
+      "impacto": 0.9,
+      "fuente": "Festivo nacional móvil (cálculo litúrgico).",
+      "regla": { "tipo": "pascua", "offset_ini": -3, "offset_fin": -3 }
+    },
+    {
+      "id": "viernes_santo",
+      "nombre": "Viernes Santo",
+      "categoria": "festivo_local",
+      "impacto": 0.9,
+      "fuente": "Festivo nacional móvil (cálculo litúrgico).",
+      "regla": { "tipo": "pascua", "offset_ini": -2, "offset_fin": -2 }
+    },
+    {
+      "id": "post_semana_santa",
+      "nombre": "Semana siguiente a Semana Santa",
+      "categoria": "otro",
+      "impacto": 0.4,
+      "fuente": "Siete días posteriores al Domingo de Resurrección.",
+      "regla": { "tipo": "pascua", "offset_ini": 1, "offset_fin": 7 }
+    },
+    {
+      "id": "dia_madre",
+      "nombre": "Día de la Madre (y ventana comercial)",
+      "categoria": "evento_masivo",
+      "impacto": 0.5,
+      "fuente": "Segundo domingo de mayo en Colombia.",
+      "regla": {
+        "tipo": "n_esimo_dia_semana",
+        "mes": 5,
+        "dia_semana": 6,
+        "n": 2,
+        "ventana_antes": 2,
+        "ventana_despues": 1
+      }
+    },
+    {
+      "id": "dia_padre",
+      "nombre": "Día del Padre (y ventana comercial)",
+      "categoria": "evento_masivo",
+      "impacto": 0.45,
+      "fuente": "Tercer domingo de junio en Colombia.",
+      "regla": {
+        "tipo": "n_esimo_dia_semana",
+        "mes": 6,
+        "dia_semana": 6,
+        "n": 3,
+        "ventana_antes": 2,
+        "ventana_despues": 1
+      }
+    },
+    {
+      "id": "dia_nino",
+      "nombre": "Día del Niño (y ventana comercial)",
+      "categoria": "evento_masivo",
+      "impacto": 0.45,
+      "fuente": "Regla usada históricamente: último sábado de abril.",
+      "regla": {
+        "tipo": "ultimo_dia_semana",
+        "mes": 4,
+        "dia_semana": 5,
+        "ventana_antes": 1,
+        "ventana_despues": 1
+      }
+    },
+    {
+      "id": "amor_amistad",
+      "nombre": "Amor y Amistad (y ventana comercial)",
+      "categoria": "evento_masivo",
+      "impacto": 0.45,
+      "fuente": "Regla usada históricamente: tercer sábado de septiembre.",
+      "regla": {
+        "tipo": "n_esimo_dia_semana",
+        "mes": 9,
+        "dia_semana": 5,
+        "n": 3,
+        "ventana_antes": 1,
+        "ventana_despues": 1
+      }
+    },
+    {
+      "id": "halloween",
+      "nombre": "Halloween (y ventana comercial)",
+      "categoria": "evento_masivo",
+      "impacto": 0.35,
+      "fuente": "31 de octubre; ventana comercial de un día antes y después.",
+      "regla": { "tipo": "fecha_fija", "mes": 10, "dia": 31, "ventana_antes": 1, "ventana_despues": 1 }
+    }
+  ]
+}
