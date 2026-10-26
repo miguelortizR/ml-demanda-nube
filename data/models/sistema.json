@@ -1,0 +1,145 @@
+{
+  "nombre": "sistema",
+  "alcance": "sistema",
+  "algoritmo": "Ensamble ponderado optimizado: hist_gradient_boosting (w=0.37), random_forest (w=0.52), ridge (w=0.11)",
+  "features": [
+    "dia_tipo_num",
+    "dia_semana",
+    "es_habil",
+    "es_sabado",
+    "es_festivo",
+    "es_fin_semana",
+    "mes_num",
+    "dia_del_mes",
+    "semana_iso",
+    "es_inicio_mes",
+    "es_fin_mes",
+    "es_quincena",
+    "es_dia_15",
+    "es_ultimo_dia_mes",
+    "es_dia_pago",
+    "es_pre_pago",
+    "es_post_pago",
+    "n_eventos",
+    "impacto_evento",
+    "peso_eventos",
+    "evento_amor_amistad",
+    "evento_dia_madre",
+    "evento_dia_nino",
+    "evento_dia_padre",
+    "evento_dic_24",
+    "evento_dic_25",
+    "evento_dic_31",
+    "evento_enero_01",
+    "evento_halloween",
+    "evento_jueves_santo",
+    "evento_post_semana_santa",
+    "evento_prev_semana_santa",
+    "evento_semana_santa",
+    "evento_semana_santa_laboral",
+    "evento_temporada_dic",
+    "evento_viernes_santo",
+    "evento_black_friday",
+    "evento_dia_padre_comercial_2026",
+    "evento_eleccion_presidencial_1v_2026",
+    "evento_eleccion_presidencial_2v_2026",
+    "evento_feria_cali",
+    "evento_marchas_paro",
+    "evento_receso_escolar_fin_anio",
+    "evento_receso_escolar_mitad_anio",
+    "evento_receso_escolar_octubre",
+    "evento_receso_escolar_semana_santa",
+    "evento_sismo_10_agosto",
+    "nivel_reciente",
+    "factor_mes_tipo",
+    "patron_estacional"
+  ],
+  "metricas": {
+    "mae": 12820.866838162536,
+    "rmse": 21006.376398935583,
+    "wape": 5.491557710255561,
+    "smape": 6.047575821194139,
+    "mape": 6.419489650452605,
+    "r2": 0.9296966562159598
+  },
+  "desde_entrenamiento": "2023-10-11",
+  "hasta_entrenamiento": "2026-10-11",
+  "fecha_entrenamiento": "2026-10-25T14:43:05.986730",
+  "extras": {
+    "comparativa": [
+      {
+        "modelo": "ensamble",
+        "tipo": "ensamble",
+        "mae": 12820.8668381625,
+        "rmse": 21006.3763989356,
+        "wape": 5.4915577103,
+        "smape": 6.0475758212,
+        "mape": 6.4194896505,
+        "r2": 0.9296966562
+      },
+      {
+        "modelo": "random_forest",
+        "tipo": "individual",
+        "mae": 13222.994367923,
+        "rmse": 19884.5829795949,
+        "wape": 5.736846141,
+        "smape": 6.1538928539,
+        "mape": 6.5289289999,
+        "r2": 0.920825653
+      },
+      {
+        "modelo": "hist_gradient_boosting",
+        "tipo": "individual",
+        "mae": 13409.2004054917,
+        "rmse": 20088.5243724965,
+        "wape": 5.8100944457,
+        "smape": 6.4691987991,
+        "mape": 6.8463684335,
+        "r2": 0.9241202983
+      },
+      {
+        "modelo": "ridge",
+        "tipo": "individual",
+        "mae": 15352.9568095524,
+        "rmse": 22245.3297725983,
+        "wape": 6.623856247,
+        "smape": 7.4500734952,
+        "mape": 7.8017259756,
+        "r2": 0.912587334
+      }
+    ],
+    "pesos_ensamble": [
+      0.37035770410543173,
+      0.522610610189373,
+      0.10703168570519525
+    ],
+    "nombres_ensamble": [
+      "hist_gradient_boosting",
+      "random_forest",
+      "ridge"
+    ],
+    "mejores_parametros": {
+      "hist_gradient_boosting": {
+        "modelo__learning_rate": 0.0653438885055459,
+        "modelo__max_iter": 345,
+        "modelo__max_leaf_nodes": 23,
+        "modelo__min_samples_leaf": 21,
+        "modelo__l2_regularization": 0.029251705516715066
+      },
+      "random_forest": {
+        "modelo__n_estimators": 193,
+        "modelo__max_depth": 23,
+        "modelo__min_samples_leaf": 1,
+        "modelo__max_features": 0.8044854307598881
+      },
+      "ridge": {
+        "modelo__alpha": 14.768044026566983
+      }
+    },
+    "campeon": "ensamble",
+    "activado_manualmente": false,
+    "observacion": "",
+    "mlflow_run_id": "2f37e83de28e4b78a2ab70f38c409c69",
+    "mlflow_experiment_id": "1"
+  }
+}

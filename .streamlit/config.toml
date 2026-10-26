@@ -1,0 +1,20 @@
+# Tema visual de la aplicación.
+#
+# Reglas de diseño (skills de interfaz): superficies planas, poco cromo, el color
+# reservado a los datos y a las acciones. Sin degradados ni sombras.
+
+[theme]
+base = "light"
+primaryColor = "#2563eb"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f8fafc"
+textColor = "#0f172a"
+borderColor = "#e2e8f0"
+dataframeBorderColor = "#e2e8f0"
+baseRadius = "0.375rem"
+showWidgetBorder = true
+showSidebarBorder = true
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
