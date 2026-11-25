@@ -168,6 +168,16 @@
       "categoria": "evento_masivo",
       "fuente": "Marchas-Paro",
       "perfil_impacto": "constante"
+    },
+    {
+      "id": "paro_centro",
+      "nombre": "Paro_Centro",
+      "fecha_inicio": "2026-11-06",
+      "fecha_fin": "2026-11-06",
+      "impacto": 0.5,
+      "categoria": "paro",
+      "fuente": "Paro_Centro",
+      "perfil_impacto": "constante"
     }
   ]
 }

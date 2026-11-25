@@ -1,7 +1,7 @@
 {
   "nombre": "sistema",
   "alcance": "sistema",
-  "algoritmo": "Ensamble ponderado optimizado: hist_gradient_boosting (w=0.37), random_forest (w=0.52), ridge (w=0.11)",
+  "algoritmo": "Ensamble ponderado optimizado: hist_gradient_boosting (w=0.49), random_forest (w=0.42), ridge (w=0.09)",
   "features": [
     "dia_tipo_num",
     "dia_semana",
@@ -45,6 +45,7 @@
     "evento_eleccion_presidencial_2v_2026",
     "evento_feria_cali",
     "evento_marchas_paro",
+    "evento_paro_centro",
     "evento_receso_escolar_fin_anio",
     "evento_receso_escolar_mitad_anio",
     "evento_receso_escolar_octubre",
@@ -55,63 +56,63 @@
     "patron_estacional"
   ],
   "metricas": {
-    "mae": 12820.866838162536,
-    "rmse": 21006.376398935583,
-    "wape": 5.491557710255561,
-    "smape": 6.047575821194139,
-    "mape": 6.419489650452605,
-    "r2": 0.9296966562159598
+    "mae": 13322.079433723864,
+    "rmse": 21854.084006824964,
+    "wape": 5.7180124417845795,
+    "smape": 6.273190275770109,
+    "mape": 6.780461616100853,
+    "r2": 0.9237288489097484
   },
-  "desde_entrenamiento": "2023-10-11",
-  "hasta_entrenamiento": "2026-10-11",
-  "fecha_entrenamiento": "2026-10-25T14:43:05.986730",
+  "desde_entrenamiento": "2023-11-13",
+  "hasta_entrenamiento": "2026-11-13",
+  "fecha_entrenamiento": "2026-11-24T17:52:45.487260",
   "extras": {
     "comparativa": [
       {
         "modelo": "ensamble",
         "tipo": "ensamble",
-        "mae": 12820.8668381625,
-        "rmse": 21006.3763989356,
-        "wape": 5.4915577103,
-        "smape": 6.0475758212,
-        "mape": 6.4194896505,
-        "r2": 0.9296966562
+        "mae": 13322.0794337239,
+        "rmse": 21854.084006825,
+        "wape": 5.7180124418,
+        "smape": 6.2731902758,
+        "mape": 6.7804616161,
+        "r2": 0.9237288489
       },
       {
         "modelo": "random_forest",
         "tipo": "individual",
-        "mae": 13222.994367923,
-        "rmse": 19884.5829795949,
-        "wape": 5.736846141,
-        "smape": 6.1538928539,
-        "mape": 6.5289289999,
-        "r2": 0.920825653
+        "mae": 13620.0370526332,
+        "rmse": 19911.7368350756,
+        "wape": 5.978777822,
+        "smape": 6.3261689544,
+        "mape": 6.8751317038,
+        "r2": 0.9121762562
       },
       {
         "modelo": "hist_gradient_boosting",
         "tipo": "individual",
-        "mae": 13409.2004054917,
-        "rmse": 20088.5243724965,
-        "wape": 5.8100944457,
-        "smape": 6.4691987991,
-        "mape": 6.8463684335,
-        "r2": 0.9241202983
+        "mae": 13672.2331478257,
+        "rmse": 20156.0020437385,
+        "wape": 5.9866044904,
+        "smape": 6.5336395409,
+        "mape": 7.0044014891,
+        "r2": 0.9157360624
       },
       {
         "modelo": "ridge",
         "tipo": "individual",
-        "mae": 15352.9568095524,
-        "rmse": 22245.3297725983,
-        "wape": 6.623856247,
-        "smape": 7.4500734952,
-        "mape": 7.8017259756,
-        "r2": 0.912587334
+        "mae": 15822.7830286465,
+        "rmse": 22190.9308265151,
+        "wape": 6.9233464801,
+        "smape": 7.5975275128,
+        "mape": 8.1130121029,
+        "r2": 0.9013500618
       }
     ],
     "pesos_ensamble": [
-      0.37035770410543173,
-      0.522610610189373,
-      0.10703168570519525
+      0.4890642547731249,
+      0.4245902447962355,
+      0.08634550043063971
     ],
     "nombres_ensamble": [
       "hist_gradient_boosting",
@@ -120,26 +121,26 @@
     ],
     "mejores_parametros": {
       "hist_gradient_boosting": {
-        "modelo__learning_rate": 0.0653438885055459,
-        "modelo__max_iter": 345,
+        "modelo__learning_rate": 0.08396820573434764,
+        "modelo__max_iter": 407,
         "modelo__max_leaf_nodes": 23,
-        "modelo__min_samples_leaf": 21,
-        "modelo__l2_regularization": 0.029251705516715066
+        "modelo__min_samples_leaf": 28,
+        "modelo__l2_regularization": 0.24518965189595948
       },
       "random_forest": {
-        "modelo__n_estimators": 193,
-        "modelo__max_depth": 23,
+        "modelo__n_estimators": 291,
+        "modelo__max_depth": 12,
         "modelo__min_samples_leaf": 1,
-        "modelo__max_features": 0.8044854307598881
+        "modelo__max_features": 0.32086918937074255
       },
       "ridge": {
-        "modelo__alpha": 14.768044026566983
+        "modelo__alpha": 0.10508769331143067
       }
     },
     "campeon": "ensamble",
     "activado_manualmente": false,
-    "observacion": "",
-    "mlflow_run_id": "2f37e83de28e4b78a2ab70f38c409c69",
+    "observacion": "Actualización Mario_Rendon",
+    "mlflow_run_id": "c28f4f1625854e1f89866dafe2ea0c2f",
     "mlflow_experiment_id": "1"
   }
 }
